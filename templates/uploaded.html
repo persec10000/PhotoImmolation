@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'head-imports.html' %}
+    <style>
+        .container {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+    <section class="container" id="content">
+        <h1>File Uploaded!</h1>
+        <a class="btn" href="/">Go back to gallery</a>
+
+    <div class="imgs">
+        <img class="imgs" src="{{ url_for('send_image_for_user', filename=imgfile) }}" />
+        <img class="imgs" src="{{ url_for('send_image_for_user', filename=imgBody) }}" />
+        <img class="imgs" src="{{ url_for('send_image_for_user', filename=imgGray) }}" />
+        <img class="imgs" src="{{ url_for('send_image_for_user', filename=imgPosePt) }}" />
+        <img class="imgs" src="{{ url_for('send_image_for_user', filename=imgPoseLn) }}" />
+    </div>
+
+    <div class="image-container img-responsive">
+        <img class="main-img" src="{{ url_for('send_image_for_user', filename=imgfile) }}" id="current">
+    </div>
+
+
+    </section>
+
+
+
+
+
+    {% include 'scripts.html' %}
+    <script src="{{url_for('static', filename='scripts/main.js')}}"></script>
+</body>
+
+</html>
